@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Tools - Titan Business Pros LLC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-image: url('https://github.com/TitanBusinessPros/M-Plans/raw/main/M-Plans-BG-1.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Logo Styles */
+        .logo-container {
+            text-align: center;
+            padding: 30px 20px 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .company-logo {
+            max-width: 600px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        .company-logo img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: contain;
+        }
+        
+        /* Header Styles */
+        .main-header {
+            background-color: rgba(26, 42, 108, 0.9);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .main-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Marketing Tools Grid */
+        .tools-section {
+            padding: 30px 20px 60px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2a6c;
+            font-size: 2.2rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(26, 42, 108, 0.2);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tool-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .tool-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .tool-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-content h3 {
+            color: #1a2a6c;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            min-height: 60px;
+        }
+        
+        .tool-content p {
+            color: #555;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        
+        .card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .btn {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-pay {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-pay:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-payments {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-payments:hover {
+            background-color: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(255, 193, 7, 0.3);
+        }
+        
+        /* Contact Form Section */
+        .contact-section {
+            padding: 60px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+        
+        .contact-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2a6c;
+            font-size: 2.2rem;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a2a6c;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a2a6c;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: #1a2a6c;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .btn-submit:hover {
+            background-color: #0d1b4c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 42, 108, 0.3);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: rgba(26, 42, 108, 0.95);
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 40px;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            flex-basis: 30%;
+            min-width: 300px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .footer-logo p {
+            opacity: 0.8;
+            max-width: 300px;
+        }
+        
+        .footer-contact {
+            flex-basis: 30%;
+            min-width: 300px;
+        }
+        
+        .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #4dabf7;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: #4dabf7;
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .tools-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .main-header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .company-logo {
+                max-width: 500px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-header p {
+                font-size: 1.1rem;
+            }
+            
+            .footer-logo, .footer-contact {
+                flex-basis: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .company-logo {
+                max-width: 400px;
+            }
+            
+            .contact-container {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-header {
+                padding: 30px 15px;
+            }
+            
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .company-logo {
+                max-width: 300px;
+            }
+            
+            .card-buttons {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tool-card {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        /* Stagger the animation for cards */
+        .tool-card:nth-child(1) { animation-delay: 0.1s; }
+        .tool-card:nth-child(2) { animation-delay: 0.2s; }
+        .tool-card:nth-child(3) { animation-delay: 0.3s; }
+        .tool-card:nth-child(4) { animation-delay: 0.4s; }
+        .tool-card:nth-child(5) { animation-delay: 0.5s; }
+        .tool-card:nth-child(6) { animation-delay: 0.6s; }
+        .tool-card:nth-child(7) { animation-delay: 0.7s; }
+        .tool-card:nth-child(8) { animation-delay: 0.8s; }
+        .tool-card:nth-child(9) { animation-delay: 0.9s; }
+        .tool-card:nth-child(10) { animation-delay: 1.0s; }
+        .tool-card:nth-child(11) { animation-delay: 1.1s; }
+        .tool-card:nth-child(12) { animation-delay: 1.2s; }
+        .tool-card:nth-child(13) { animation-delay: 1.3s; }
+        .tool-card:nth-child(14) { animation-delay: 1.4s; }
+        .tool-card:nth-child(15) { animation-delay: 1.5s; }
+        .tool-card:nth-child(16) { animation-delay: 1.6s; }
+        .tool-card:nth-child(17) { animation-delay: 1.7s; }
+        .tool-card:nth-child(18) { animation-delay: 1.8s; }
+        .tool-card:nth-child(19) { animation-delay: 1.9s; }
+        .tool-card:nth-child(20) { animation-delay: 2.0s; }
+    </style>
+</head>
+<body>
+    <!-- Company Logo -->
+    <div class="logo-container">
+        <div class="company-logo">
+            <img src="https://github.com/TitanBusinessPros/M-Plans/raw/main/Titan%20Logo-2.png" alt="Titan Business Pros LLC Logo">
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <h1>Gain The Marketing Tools Your Company Needs At No Up-Front Cost</h1>
+            <p>Most marketing companies want your money up-front without showing you results. Gain the marketing tools needed without paying a dime your first 90 days! Chop your payments up into 6 or 12 so it doesn't cost your small business a fortune just to do marketing! Gain tools that last for life. These tools will be used 10 years down the road for your company and don't just go away. At Titan Business Pros LLC we know and understand the struggles small business owners face because we are a small business. As software developers we can offer much more then most marketing companies at much better pricing. Enjoy up-to 15 months of small payments to make your company shine!</p>
+        </div>
+    </header>
+
+    <!-- Marketing Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <h2 class="section-title">Our Marketing Tools Collection</h2>
+            <div class="tools-grid" id="toolsGrid">
+                <!-- Cards will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact-form">
+        <div class="container">
+            <h2 class="contact-title">Contact Us For Payment Plans</h2>
+            <div class="contact-container">
+                <form class="contact-form" action="https://formsubmit.co/titanbusinesspros@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Payment Inquiry - Titan Business Pros">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="#">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Please let us know which marketing tool you're interested in and your preferred payment plan..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Titan Business Pros LLC</h3>
+                    <p>Providing innovative marketing solutions for small businesses with flexible payment options and lifetime value.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>405-998-7979</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <span>www.okiewebsiteguy.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Oklahoma City, OK</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>titanbusinesspros@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Titan Business Pros LLC. All rights reserved. | Designed with small businesses in mind</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Array of tool cards data - EDIT THIS SECTION TO CHANGE EACH CARD INDIVIDUALLY
+        const toolCardsData = [
+            // Card 1 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "This Is a Great Marketing tool!",
+                description: "This awesome marketing tool can be yours for only 12 payments of $35! Secure this marketing tool for your company and stick out among the crowd! No hidden fees or monthly fees! Once paid off you will never have unwanted fees pop up and will have free hosting for life with no additional cost!",
+                payLink: "https://www.titantreasurequest.com/" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 2 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Social Media Campaign Manager",
+                description: "Automate and schedule posts across all social platforms. Includes analytics dashboard to track engagement and ROI. Perfect for businesses wanting to maintain a consistent online presence.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 3 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Email Marketing Suite",
+                description: "Create beautiful email campaigns with our drag-and-drop editor. Includes subscriber management, automation workflows, and detailed performance reports.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 4 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "SEO Optimization Toolkit",
+                description: "Improve your website's search engine ranking with our comprehensive SEO tools. Includes keyword research, backlink analysis, and competitor tracking.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 5 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Graphic Design Platform",
+                description: "Create professional marketing materials with thousands of templates. No design experience needed. Includes logos, flyers, social media graphics, and more.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 6 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Video Marketing Creator",
+                description: "Produce engaging marketing videos with our easy-to-use editor. Includes stock footage library, text animations, and voice-over capabilities.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 7 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Customer Relationship Manager",
+                description: "Track leads, manage customer interactions, and automate follow-ups. Integrated with email and social media for complete customer journey tracking.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 8 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Analytics Dashboard Pro",
+                description: "Monitor all your marketing efforts in one place. Real-time data visualization for website traffic, conversion rates, and campaign performance.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 9 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Landing Page Builder",
+                description: "Create high-converting landing pages without coding. A/B testing included to optimize your pages for maximum conversions.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 10 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Reputation Management System",
+                description: "Monitor and respond to online reviews across all platforms. Generate positive reviews and manage your online reputation effectively.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 11 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Content Calendar Planner",
+                description: "Plan and organize all your content marketing efforts. Collaborate with team members and schedule content across all channels.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 12 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Advertising Campaign Manager",
+                description: "Create and manage paid advertising campaigns across Google, Facebook, Instagram, and LinkedIn. Budget tracking and ROI analysis included.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 13 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Lead Generation Tools",
+                description: "Capture more leads with customizable forms, pop-ups, and chatbots. Integrates with your CRM and email marketing platform.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 14 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Market Research Suite",
+                description: "Understand your target audience with surveys, polls, and competitive analysis tools. Make data-driven marketing decisions.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 15 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Marketing Automation Platform",
+                description: "Automate repetitive marketing tasks and create personalized customer journeys. Trigger actions based on user behavior and preferences.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 16 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Mobile Marketing Toolkit",
+                description: "Reach customers on their mobile devices with SMS campaigns, push notifications, and mobile-optimized content.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 17 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "E-commerce Marketing Suite",
+                description: "Specialized tools for online stores including abandoned cart recovery, product recommendations, and promotional campaigns.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 18 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Brand Identity Builder",
+                description: "Develop a consistent brand identity across all marketing materials. Includes brand guideline creation and asset management.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 19 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Webinar & Event Marketing",
+                description: "Promote and host virtual events with registration pages, email reminders, and post-event follow-up automation.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            },
+            // Card 20 - ADD YOUR STRIPE LINK FOR EACH CARD
+            {
+                image: "https://github.com/TitanBusinessPros/M-Plans/raw/main/Gen-Ad-23.png",
+                title: "Marketing Compliance Checker",
+                description: "Ensure your marketing materials comply with regulations like GDPR and CAN-SPAM. Includes template review and approval workflows.",
+                payLink: "https://buy.stripe.com/test_28o3cgbMU3Pm9c08ww" // REPLACE WITH YOUR ACTUAL STRIPE LINK
+            }
+        ];
+        
+        // Function to generate the tool cards
+        function generateToolCards() {
+            const toolsGrid = document.getElementById('toolsGrid');
+            
+            // Create cards from the data array
+            toolCardsData.forEach((tool, index) => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                
+                card.innerHTML = `
+                    <div class="tool-image">
+                        <img src="${tool.image}" alt="Marketing Tool ${index+1}">
+                    </div>
+                    <div class="tool-content">
+                        <h3>${tool.title}</h3>
+                        <p>${tool.description}</p>
+                        <div class="card-buttons">
+                            <a href="${tool.payLink}" target="_blank" class="btn btn-pay">Pay Now</a>
+                            <a href="#contact-form" class="btn btn-payments">Make Payments</a>
+                        </div>
+                    </div>
+                `;
+                
+                toolsGrid.appendChild(card);
+            });
+        }
+        
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            generateToolCards();
+            
+            // Form submission handling
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Form will be submitted to FormSubmit
+                    // You could add additional validation here if needed
+                    console.log('Form submitted to FormSubmit');
+                });
+            }
+            
+            // Add a subtle hover effect for contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Smooth scroll for Make Payments buttons
+            const makePaymentButtons = document.querySelectorAll('.btn-payments');
+            makePaymentButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
